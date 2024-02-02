@@ -35,6 +35,7 @@ import static com.realmeparts.DeviceSettings.GAME_MODE_SYSTEM_PROPERTY;
 public class GameModeSwitch implements OnPreferenceChangeListener {
     public static final int GameMode_Notification_Channel_ID = 0x11011;
     private static final boolean GameMode = false;
+    private static final String FILE = "/proc/touchpanel/game_switch_enable";
     private static Context mContext;
     private static NotificationManager mNotificationManager;
     private static int userSelectedDndMode;
@@ -44,14 +45,20 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
         userSelectedDndMode = mContext.getSystemService(NotificationManager.class).getCurrentInterruptionFilter();
     }
 
+
+    public static String getFile() {
+        if (Utils.fileWritable(FILE)) {
+            return FILE;
+        }
+        return null;
+    }
+
     public static boolean isSupported() {
-        return Utils.fileWritable(TP_LIMIT_ENABLE)
-                && Utils.fileWritable(TP_DIRECTION);
+        return Utils.fileWritable(getFile());
     }
 
     public static boolean isCurrentlyEnabled(Context context) {
-        return Utils.getFileValue(TP_LIMIT_ENABLE, "1").equals("0")
-                && SystemProperties.getBoolean(GAME_MODE_SYSTEM_PROPERTY, false);
+        return Utils.getFileValueAsBoolean(getFile(), false);
     }
 
     public static boolean checkNotificationPolicy(Context context) {
@@ -94,6 +101,7 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
+        Utils.writeValue(getFile(), enabled ? "1" : "0");
         Utils.writeValue(TP_LIMIT_ENABLE, enabled ? "0" : "1");
         SystemProperties.set(GAME_MODE_SYSTEM_PROPERTY, enabled ? "1" : "0");
         if (enabled) Utils.startService(mContext, GameModeRotationService.class);

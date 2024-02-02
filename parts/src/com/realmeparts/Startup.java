@@ -17,6 +17,14 @@
  */
 package com.realmeparts;
 
+import com.realmeparts.services.AppNotification;
+import com.realmeparts.services.ChargingCoolDownService;
+import com.realmeparts.services.FPSInfoService;
+import com.realmeparts.services.FPSTileService;
+import com.realmeparts.services.GameModeRotationService;
+import com.realmeparts.switch.GameModeSwitch;
+import com.realmeparts.switch.OTGModeSwitch;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -52,6 +60,7 @@ public class Startup extends BroadcastReceiver {
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_OTG_SWITCH, false);
         restore(OTGModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_GAME_SWITCH, false);
+        restore(GameModeSwitch.getFile(), enabled);
         restore(DeviceSettings.TP_LIMIT_ENABLE, enabled ? "0" : "1");
         if (enabled) {
             Utils.startService(context, GameModeRotationService.class);
