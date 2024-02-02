@@ -8,6 +8,9 @@ on boot
     chmod 0644 /sys/class/leds/vibrator/vmax
 
     # Game Mode
+    chown system system /proc/touchpanel/game_switch_enable
+    chmod 0644 /proc/touchpanel/game_switch_enable
+
     chown system system /proc/touchpanel/oplus_tp_direction
     chmod 0644 /proc/touchpanel/oplus_tp_direction
 
@@ -36,19 +39,10 @@ on property:persist.perf_profile=1
     write /sys/class/kgsl/kgsl-3d0/force_rail_on 1
     write /sys/class/kgsl/kgsl-3d0/idle_timer 120
     write /sys/class/kgsl/kgsl-3d0/throttling 0
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 1401600
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq 2016000
-    write /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq 1497600
-    write /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq 2323200
-    write /sys/module/cpu_boost/parameters/input_boost_freq "4:1804800 7:1708800"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 120
-    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/min_freq 7110
-    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/min_freq 5161
     write /sys/module/lpm_levels/parameters/sleep_disabled 1
 
 on property:persist.perf_profile=0
-    write /dev/stune/top-app/schedtune.boost 1
+    write /dev/stune/top-app/schedtune.boost 0
     write /proc/sys/kernel/sched_conservative_pl 1
     write /sys/class/kgsl/kgsl-3d0/min_pwrlevel 6
     write /sys/class/kgsl/kgsl-3d0/force_bus_on 0
@@ -57,13 +51,4 @@ on property:persist.perf_profile=0
     write /sys/class/kgsl/kgsl-3d0/force_rail_on 0
     write /sys/class/kgsl/kgsl-3d0/idle_timer 80
     write /sys/class/kgsl/kgsl-3d0/throttling 1
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 1171200
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq 1708800
-    write /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq 1056000
-    write /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq 1612800
-    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1632000 4:1612800 7:1497600"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 100
-    write /sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/min_freq 2288
-    write /sys/class/devfreq/soc:qcom,cpu-llcc-ddr-bw/min_freq 762
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
