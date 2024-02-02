@@ -24,7 +24,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 
 public class OTGModeSwitch implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/sys/class/power_supply/usb/otg_switch";
+    private static final String FILE = "/sys/class/oplus_chg/usb/otg_switch";
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
