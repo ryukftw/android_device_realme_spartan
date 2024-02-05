@@ -30,7 +30,6 @@ import androidx.preference.PreferenceManager;
 
 import static com.realmeparts.DeviceSettings.TP_LIMIT_ENABLE;
 import static com.realmeparts.DeviceSettings.TP_DIRECTION;
-import static com.realmeparts.DeviceSettings.GAME_MODE_SYSTEM_PROPERTY;
 
 public class GameModeSwitch implements OnPreferenceChangeListener {
     public static final int GameMode_Notification_Channel_ID = 0x11011;
@@ -47,14 +46,11 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
 
 
     public static String getFile() {
-        if (Utils.fileWritable(FILE)) {
             return FILE;
-        }
-        return null;
     }
 
     public static boolean isSupported() {
-        return Utils.fileWritable(getFile());
+        return true;
     }
 
     public static boolean isCurrentlyEnabled(Context context) {
@@ -103,7 +99,6 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
         Boolean enabled = (Boolean) newValue;
         Utils.writeValue(getFile(), enabled ? "1" : "0");
         Utils.writeValue(TP_LIMIT_ENABLE, enabled ? "0" : "1");
-        SystemProperties.set(GAME_MODE_SYSTEM_PROPERTY, enabled ? "1" : "0");
         if (enabled) Utils.startService(mContext, GameModeRotationService.class);
         else Utils.stopService(mContext, GameModeRotationService.class);
         GameModeDND();

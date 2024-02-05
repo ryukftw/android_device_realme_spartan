@@ -27,14 +27,11 @@ public class OTGModeSwitch implements OnPreferenceChangeListener {
     private static final String FILE = "/sys/class/oplus_chg/usb/otg_switch";
 
     public static String getFile() {
-        if (Utils.fileWritable(FILE)) {
             return FILE;
-        }
-        return null;
     }
 
     public static boolean isSupported() {
-        return Utils.fileWritable(getFile());
+        return true;
     }
 
     public static boolean isCurrentlyEnabled(Context context) {
