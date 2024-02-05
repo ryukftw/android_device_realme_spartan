@@ -42,12 +42,7 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_OTG_SWITCH = "otg";
     public static final String KEY_GAME_SWITCH = "game";
     public static final String KEY_DND_SWITCH = "dnd";
-    public static final String KEY_CABC = "cabc";
     public static final String KEY_FPS_INFO = "fps_info";
-    public static final String KEY_VIBRATION_STRENGTH = "vibration_strength";
-    public static final String CABC_SYSTEM_PROPERTY = "persist.cabc_profile";
-    public static final String VIB_STRENGTH_SYSTEM_PROPERTY = "persist.vib_strength";
-    public static final String GAME_MODE_SYSTEM_PROPERTY = "persist.perf_profile";
     public static final String TP_DIRECTION = "/proc/touchpanel/oplus_tp_direction";
     public static final String TP_LIMIT_ENABLE = "/proc/touchpanel/oplus_tp_limit_enable";
     private static NotificationManager mNotificationManager;
@@ -57,7 +52,6 @@ public class DeviceSettings extends PreferenceFragment
     private TwoStatePreference mOTGModeSwitch;
     private TwoStatePreference mGameModeSwitch;
     private SwitchPreference mFpsInfo;
-    private SecureSettingListPreference mCABC;
     private SecureSettingListPreference mVibStrength;
 
     @Override
@@ -84,17 +78,6 @@ public class DeviceSettings extends PreferenceFragment
         mFpsInfo.setChecked(Utils.isFpsInfoShowing(getActivity().getApplicationContext()));
         mFpsInfo.setOnPreferenceChangeListener(this);
 
-        mCABC = (SecureSettingListPreference) findPreference(KEY_CABC);
-        mCABC.setValue(Utils.getStringProp(CABC_SYSTEM_PROPERTY, "0"));
-        mCABC.setSummary(mCABC.getEntry());
-        mCABC.setOnPreferenceChangeListener(this);
-
-        mVibStrength = (SecureSettingListPreference) findPreference(KEY_VIBRATION_STRENGTH);
-        mVibStrength.setValue(Utils.getStringProp(VIB_STRENGTH_SYSTEM_PROPERTY, "2500"));
-        mVibStrength.setSummary(mVibStrength.getEntry());
-        mVibStrength.setOnPreferenceChangeListener(this);
-
-        mVibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     @Override
@@ -107,20 +90,6 @@ public class DeviceSettings extends PreferenceFragment
                 Utils.stopService(getActivity().getApplicationContext(), FPSInfoService.class);
             }
         }
-
-        if (preference == mCABC) {
-            mCABC.setValue((String) newValue);
-            mCABC.setSummary(mCABC.getEntry());
-            Utils.setStringProp(CABC_SYSTEM_PROPERTY, (String) newValue);
-        }
-
-        if (preference == mVibStrength) {
-            mVibStrength.setValue((String) newValue);
-            mVibStrength.setSummary(mVibStrength.getEntry());
-            Utils.setStringProp(VIB_STRENGTH_SYSTEM_PROPERTY, (String) newValue);
-            mVibrator.vibrate(VibrationEffect.createOneShot(85, VibrationEffect.DEFAULT_AMPLITUDE));
-        }
-
         return true;
     }
 }

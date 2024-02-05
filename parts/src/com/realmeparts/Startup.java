@@ -17,14 +17,6 @@
  */
 package com.realmeparts;
 
-import com.realmeparts.services.AppNotification;
-import com.realmeparts.services.ChargingCoolDownService;
-import com.realmeparts.services.FPSInfoService;
-import com.realmeparts.services.FPSTileService;
-import com.realmeparts.services.GameModeRotationService;
-import com.realmeparts.switch.GameModeSwitch;
-import com.realmeparts.switch.OTGModeSwitch;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -71,7 +63,6 @@ public class Startup extends BroadcastReceiver {
             Utils.startService(context, FPSInfoService.class);
         }
         Utils.startService(context, FPSTileService.class);
-        Utils.startService(context, ChargingCoolDownService.class);
     }
 
     private boolean hasRestoredTunable(Context context) {

@@ -1,12 +1,4 @@
 on boot
-    # CABC
-    chown system system /sys/kernel/oppo_display/LCM_CABC
-    chmod 0644 /sys/kernel/oppo_display/LCM_CABC
-
-    # Vibration Strength
-    chown system system /sys/class/leds/vibrator/vmax
-    chmod 0644 /sys/class/leds/vibrator/vmax
-
     # Game Mode
     chown system system /proc/touchpanel/game_switch_enable
     chmod 0644 /proc/touchpanel/game_switch_enable
@@ -16,39 +8,3 @@ on boot
 
     chown system system /proc/touchpanel/oplus_tp_limit_enable
     chmod 0644 /proc/touchpanel/oplus_tp_limit_enable
-
-    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
-    chmod 0644 /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
-
-# CABC
-on property:persist.cabc_profile=*
-    write /sys/kernel/oppo_display/LCM_CABC ${persist.cabc_profile}
-
-# Vibration Strength
-on property:persist.vib_strength=*
-    write /sys/class/leds/vibrator/vmax ${persist.vib_strength}
-
-# Game Mode
-on property:persist.perf_profile=1
-    write /dev/stune/top-app/schedtune.boost 10
-    write /proc/sys/kernel/sched_conservative_pl 0
-    write /sys/class/kgsl/kgsl-3d0/min_pwrlevel 1
-    write /sys/class/kgsl/kgsl-3d0/force_bus_on 1
-    write /sys/class/kgsl/kgsl-3d0/force_clk_on 1
-    write /sys/class/kgsl/kgsl-3d0/force_no_nap 1
-    write /sys/class/kgsl/kgsl-3d0/force_rail_on 1
-    write /sys/class/kgsl/kgsl-3d0/idle_timer 120
-    write /sys/class/kgsl/kgsl-3d0/throttling 0
-    write /sys/module/lpm_levels/parameters/sleep_disabled 1
-
-on property:persist.perf_profile=0
-    write /dev/stune/top-app/schedtune.boost 0
-    write /proc/sys/kernel/sched_conservative_pl 1
-    write /sys/class/kgsl/kgsl-3d0/min_pwrlevel 6
-    write /sys/class/kgsl/kgsl-3d0/force_bus_on 0
-    write /sys/class/kgsl/kgsl-3d0/force_clk_on 0
-    write /sys/class/kgsl/kgsl-3d0/force_no_nap 0
-    write /sys/class/kgsl/kgsl-3d0/force_rail_on 0
-    write /sys/class/kgsl/kgsl-3d0/idle_timer 80
-    write /sys/class/kgsl/kgsl-3d0/throttling 1
-    write /sys/module/lpm_levels/parameters/sleep_disabled 0

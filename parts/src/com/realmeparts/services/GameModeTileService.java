@@ -18,8 +18,6 @@
 package com.realmeparts;
 
 import com.realmeparts.DeviceSettings;
-import com.realmeparts.switch.GameModeSwitch;
-
 import android.annotation.TargetApi;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -75,7 +73,6 @@ public class GameModeTileService extends TileService {
         } else AppNotification.Cancel(this, GameModeSwitch.GameMode_Notification_Channel_ID);
         Utils.writeValue(GameModeSwitch.getFile(), enabled ? "0" : "1");
         Utils.writeValue(DeviceSettings.TP_LIMIT_ENABLE, enabled ? "1" : "0");
-        SystemProperties.set(DeviceSettings.GAME_MODE_SYSTEM_PROPERTY, enabled ? "0" : "1");
         if (enabled) Utils.stopService(this, GameModeRotationService.class);
         else Utils.startService(this, GameModeRotationService.class);
         if (sharedPrefs.getBoolean("dnd", false)) GameModeTileDND();

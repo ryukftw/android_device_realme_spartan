@@ -21,15 +21,6 @@
         android:key="graphics"
         android:title="@string/display_title">
 
-        <com.realmeparts.SecureSettingListPreference
-            android:icon="@drawable/ic_cabc"
-            android:key="cabc"
-            android:dialogTitle="@string/cabc_dialogTitle"
-            android:entries="@array/cabc_profiles"
-            android:entryValues="@array/cabc_values"
-            android:defaultValue="0"
-            android:title="@string/cabc_title" />
-
         <SwitchPreference
             android:icon="@drawable/game_mode_icon"
             android:key="game"
@@ -42,30 +33,12 @@
             android:title="@string/dnd_title"
             android:summary="@string/dnd_summary" />
 
-        <Preference
-            android:key="doze"
-            android:icon="@drawable/ic_doze_wake"
-            android:title="@string/ambient_display_gestures_title"
-            android:summary="@string/ambient_display_gestures_summary">
-            <intent android:action="android.intent.action.MAIN"
-                 android:targetPackage="org.lineageos.settings"
-                 android:targetClass="org.lineageos.settings.doze.DozeSettingsActivity" />
-        </Preference>
-
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="misc"
         android:title="@string/misc_title">
-
-        <com.realmeparts.SecureSettingListPreference
-            android:key="vibration_strength"
-            android:title="@string/vibration_strength_title"
-            android:icon="@drawable/ic_vibration"
-            android:entries="@array/vibration_strength_entries"
-            android:entryValues="@array/vibration_strength_values"
-            android:defaultValue="2500" />
-
+        
         <SwitchPreference
             android:icon="@drawable/usb_otg_icon"
             android:key="otg"
