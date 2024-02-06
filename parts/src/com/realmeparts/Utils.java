@@ -87,10 +87,6 @@ public class Utils {
     }
 
     static void setValue(String path, int value) {
-        if (fileWritable(path)) {
-            if (path == null) {
-                return;
-            }
             try {
                 FileOutputStream fos = new FileOutputStream(new File(path));
                 fos.write(Integer.toString(value).getBytes());
@@ -103,10 +99,6 @@ public class Utils {
     }
 
     static void setValue(String path, boolean value) {
-        if (fileWritable(path)) {
-            if (path == null) {
-                return;
-            }
             try {
                 FileOutputStream fos = new FileOutputStream(new File(path));
                 fos.write((value ? "1" : "0").getBytes());
@@ -119,10 +111,6 @@ public class Utils {
     }
 
     static void setValue(String path, double value) {
-        if (fileWritable(path)) {
-            if (path == null) {
-                return;
-            }
             try {
                 FileOutputStream fos = new FileOutputStream(new File(path));
                 fos.write(Long.toString(Math.round(value)).getBytes());
@@ -135,10 +123,6 @@ public class Utils {
     }
 
     static void setValue(String path, String value) {
-        if (fileWritable(path)) {
-            if (path == null) {
-                return;
-            }
             try {
                 FileOutputStream fos = new FileOutputStream(new File(path));
                 fos.write(value.getBytes());
@@ -151,9 +135,6 @@ public class Utils {
     }
 
     public static String readLine(String filename) {
-        if (filename == null) {
-            return null;
-        }
         BufferedReader br = null;
         String line = null;
         try {

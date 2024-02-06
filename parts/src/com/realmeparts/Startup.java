@@ -33,8 +33,11 @@ public class Startup extends BroadcastReceiver {
         if (file == null) {
             return;
         }
-        if (enabled) {
+        if (enabled == true) {
             Utils.writeValue(file, "1");
+        }
+        else {
+            Utils.writeValue(file, value:"0");
         }
     }
 

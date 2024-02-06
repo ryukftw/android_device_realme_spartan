@@ -17,7 +17,6 @@
  */
 package com.realmeparts;
 
-import com.realmeparts.DeviceSettings;
 import android.annotation.TargetApi;
 import android.app.NotificationManager;
 import android.content.Context;
