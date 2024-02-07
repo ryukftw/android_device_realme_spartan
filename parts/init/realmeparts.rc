@@ -2,9 +2,3 @@ on boot
     # Game Mode
     chown system system /proc/touchpanel/game_switch_enable
     chmod 0644 /proc/touchpanel/game_switch_enable
-
-    chown system system /proc/touchpanel/oplus_tp_direction
-    chmod 0644 /proc/touchpanel/oplus_tp_direction
-
-    chown system system /proc/touchpanel/oplus_tp_limit_enable
-    chmod 0644 /proc/touchpanel/oplus_tp_limit_enable

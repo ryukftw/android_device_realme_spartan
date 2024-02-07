@@ -37,7 +37,7 @@ public class Startup extends BroadcastReceiver {
             Utils.writeValue(file, "1");
         }
         else {
-            Utils.writeValue(file, value:"0");
+            Utils.writeValue(file, "0");
         }
     }
 
@@ -56,11 +56,6 @@ public class Startup extends BroadcastReceiver {
         restore(OTGModeSwitch.getFile(), enabled);
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_GAME_SWITCH, false);
         restore(GameModeSwitch.getFile(), enabled);
-        restore(DeviceSettings.TP_LIMIT_ENABLE, enabled ? "0" : "1");
-        if (enabled) {
-            Utils.startService(context, GameModeRotationService.class);
-            AppNotification.Send(context, GameModeSwitch.GameMode_Notification_Channel_ID, context.getString(R.string.game_mode_title), context.getString(R.string.game_mode_notif_content));
-        }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_FPS_INFO, false);
         if (enabled) {
             Utils.startService(context, FPSInfoService.class);

@@ -95,9 +95,8 @@ public class Utils {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
     }
-
+    
     static void setValue(String path, boolean value) {
             try {
                 FileOutputStream fos = new FileOutputStream(new File(path));
@@ -108,7 +107,7 @@ public class Utils {
                 e.printStackTrace();
             }
         }
-    }
+
 
     static void setValue(String path, double value) {
             try {
@@ -120,7 +119,7 @@ public class Utils {
                 e.printStackTrace();
             }
         }
-    }
+
 
     static void setValue(String path, String value) {
             try {
@@ -132,7 +131,7 @@ public class Utils {
                 e.printStackTrace();
             }
         }
-    }
+
 
     public static String readLine(String filename) {
         BufferedReader br = null;
@@ -163,6 +162,13 @@ public class Utils {
             return (!fileValue.equals("0"));
         }
         return defValue;
+    }
+
+    public static boolean getGameNode(String filename) {
+        String fileValue = readLine(filename);
+        if (fileValue.charAt(0) == '1')
+            return true;
+        return false;
     }
 
     public static String getFileValue(String filename, String defValue) {

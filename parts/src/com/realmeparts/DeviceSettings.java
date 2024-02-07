@@ -43,8 +43,7 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_GAME_SWITCH = "game";
     public static final String KEY_DND_SWITCH = "dnd";
     public static final String KEY_FPS_INFO = "fps_info";
-    public static final String TP_DIRECTION = "/proc/touchpanel/oplus_tp_direction";
-    public static final String TP_LIMIT_ENABLE = "/proc/touchpanel/oplus_tp_limit_enable";
+    public static final String TP_GAME_MODE = "/proc/touchpanel/game_switch_enable";
     private static NotificationManager mNotificationManager;
     private Vibrator mVibrator;
     public TwoStatePreference mDNDSwitch;
