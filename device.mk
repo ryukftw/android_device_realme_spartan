@@ -364,6 +364,9 @@ PRODUCT_PACKAGES += \
     OPlusSettingsResTarget \
     OPlusSystemUIResTarget \
     WifiResTarget
+    
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
 
 # Oplus Camera
 $(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
