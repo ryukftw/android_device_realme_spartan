@@ -358,9 +358,7 @@ PRODUCT_PACKAGES += \
     WifiResTarget
 
 # Oplus Camera
-ifeq ($(WITH_OPLUS_CAMERA),true) # use export WITH_OPLUS_CAMERA=true after lunch to build camera
-$(call inherit-product, vendor/oplus/camera/opluscamera.mk)
-endif
+$(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
