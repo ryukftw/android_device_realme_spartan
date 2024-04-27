@@ -349,6 +349,7 @@ PRODUCT_PACKAGES += \
     OPlusSettingsProviderResTarget \
     OPlusSettingsResTarget \
     OPlusSystemUIResTarget \
+    PixelSetupWizardStringsOverlay \
     WifiResTarget
 
 # Oplus Camera
