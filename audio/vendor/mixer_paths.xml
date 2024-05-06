@@ -898,6 +898,14 @@
         <ctl name="AUDIO_REF_EC_UL10 MUX" value="TERT_MI2S_RX" />
         <ctl name="EC Reference Channels" value="Two"/>
     </path>
+	
+    <path name="echo-reference-voip bt-sco-wb">
+        <path name="echo-reference-voip bt-sco" />
+    </path>
+
+    <path name="echo-reference-voip bt-sco-swb">
+        <path name="echo-reference-voip bt-sco" />
+    </path>
 
     <path name="echo-reference-voip display-port">
         <ctl name="AUDIO_REF_EC_UL10 MUX" value="DISPLAY_PORT" />
@@ -1046,6 +1054,10 @@
     <path name="low-latency-playback bt-sco-wb">
         <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="low-latency-playback bt-sco" />
+    </path>
+
+    <path name="low-latency-playback bt-sco-swb">
+        <path name="low-latency-playback bt-sco-wb" />
     </path>
 
     <path name="low-latency-playback speaker-and-display-port">
@@ -1973,6 +1985,10 @@
         <path name="audio-record bt-sco" />
     </path>
 
+    <path name="audio-record bt-sco-swb">
+        <path name="audio-record bt-sco-wb" />
+    </path>
+
     <path name="audio-record capture-fm">
         <ctl name="MultiMedia1 Mixer SLIM_8_TX" value="1" />
     </path>
@@ -2313,6 +2329,10 @@
         <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="voicemmode1-call bt-sco" />
     </path>
+	
+    <path name="voicemmode1-call bt-sco-swb">
+        <path name="voicemmode1-call bt-sco-wb" />
+    </path>
 
     <path name="voicemmode1-call afe-proxy">
         <ctl name="AFE_PCM_RX_Voice Mixer VoiceMMode1" value="1" />
@@ -2381,6 +2401,10 @@
     <path name="voicemmode2-call bt-sco-wb">
         <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="voicemmode2-call bt-sco" />
+    </path>
+
+    <path name="voicemmode2-call bt-sco-swb">
+        <path name="voicemmode2-call bt-sco-wb" />
     </path>
 
     <path name="voicemmode2-call afe-proxy">
@@ -2453,6 +2477,10 @@
         <path name="audio-playback-voip bt-sco" />
     </path>
 
+    <path name="audio-playback-voip bt-sco-swb">
+        <path name="audio-playback-voip bt-sco-wb" />
+    </path>
+
     <!--Zhao.Pan@PSW.MM.AudioDriver.HAL, 2021/04/09, Add route for bug 1297527-->
     <path name="audio-playback-voip speaker-and-bt-sco">
         <path name="audio-playback-voip speaker" />
@@ -2510,6 +2538,11 @@
         <ctl name="BT SampleRate" value="KHZ_16" />
         <path name="audio-record-voip bt-sco" />
     </path>
+	
+    <path name="audio-record-voip bt-sco-swb">
+        <path name="audio-record-voip bt-sco-wb" />
+    </path>
+	
    <path name="spkr-rx-calib">
         <ctl name="SLIMBUS_DL_HL Switch"  value="1" />
     </path>
@@ -3189,8 +3222,14 @@
 
     <path name="bt-sco-headset-wb">
     </path>
+	
+    <path name="bt-sco-headset-swb">
+    </path>
 
     <path name="bt-sco-mic-wb">
+    </path>
+	
+    <path name="bt-sco-mic-swb">
     </path>
 
     <path name="usb-headset-mic">
