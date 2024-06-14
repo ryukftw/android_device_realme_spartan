@@ -14,4 +14,8 @@
     <!-- Whether to pulse onFingerDown actions instead
         of waking the screen while the screen is off or in lpm. -->
     <bool name="config_pulseOnFingerDown">true</bool>
+
+    <!-- Color of the UDFPS Pressed view -->
+    <color name="config_udfpsColor">#00ffffff</color>
+
 </resources>
