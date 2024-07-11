@@ -514,6 +514,9 @@
     <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
     <bool name="config_autoBrightnessResetAmbientLuxAfterWarmUp">true</bool>
 
+    <!-- Expected value from fast charging status file -->
+    <string name="config_oemFastChargerStatusValue" translatable="false">1</string>
+    
     <!-- Paths to realme's vooc charging status file -->
     <string name="config_VoocChargerStatusPaths" translatable="false">/sys/class/oplus_chg/battery/voocchg_ing</string>
 
