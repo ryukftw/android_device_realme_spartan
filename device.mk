@@ -200,7 +200,7 @@ PRODUCT_COPY_FILES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    OplusDoze
+    RealmeDoze
 
 # DRM
 PRODUCT_PACKAGES += \
