@@ -161,7 +161,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    OplusDoze
+    RealmeDoze
 
 # DRM
 PRODUCT_PACKAGES += \
