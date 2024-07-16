@@ -159,7 +159,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    OplusDoze
+    RealmeDoze
 
 #Dolby
 PRODUCT_PACKAGES += \
