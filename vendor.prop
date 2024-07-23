@@ -138,6 +138,7 @@ vendor.display.disable_offline_rotator=1
 vendor.display.disable_system_load_check=1
 vendor.display.enable_async_powermode=0
 vendor.display.enable_camera_smooth=1
+vendor.display.idle_time=0
 vendor.display.not_switch_qhd_120hz=1
 vendor.display.primary_mixer_stages=9
 vendor.display.show_memc_tomast=true
