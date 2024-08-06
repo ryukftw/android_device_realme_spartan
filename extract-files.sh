@@ -58,6 +58,9 @@ function blob_fixup() {
         odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service)
             grep -q libshims_fingerprint.oplus.so "${2}" || "${PATCHELF}" --add-needed libshims_fingerprint.oplus.so "${2}"
             ;;
+        product/app/PowerOffAlarm/PowerOffAlarm.apk)
+            apktool_patch "${2}" "${MY_DIR}/blob-patches/PowerOffAlarm.patch" -s
+            ;;
         product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml)
             sed -i "s/\/my_product/\/product/" "${2}"
             ;;
