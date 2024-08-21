@@ -20,6 +20,9 @@ PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX3371
 
+# Gapps
+-include vendor/gapps/arm64/arm64-vendor.mk
+
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
