@@ -1,0 +1,7 @@
+[
+  {
+    "repository":"https://gitlab.com/MindTheGapps/vendor_gapps",
+    "target_path":"vendor/gapps",
+    "branch":"upsilon"
+  },
+]

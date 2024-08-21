@@ -33,6 +33,8 @@ TARGET_ENABLE_BLUR := true
 TARGET_EXCLUDES_AUDIOFX := true
 EXTRA_UDFPS_ICONS := true
 
+# Gapps
+-include vendor/gapps/arm64/arm64-vendor.mk
 
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
