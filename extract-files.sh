@@ -55,6 +55,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        odm/lib64/libwvhidl.so|odm/lib64/mediadrm/libwvdrmengine.so)
+            grep -q "libcrypto_shim.so" "${2}" || "${PATCHELF}" --add-needed "libcrypto_shim.so" "${2}"
+            ;;
         odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service)
             grep -q libshims_fingerprint.oplus.so "${2}" || "${PATCHELF}" --add-needed libshims_fingerprint.oplus.so "${2}"
             ;;
