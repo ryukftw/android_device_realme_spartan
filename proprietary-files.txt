@@ -717,7 +717,6 @@ odm/lib64/libwatermark_photo.so
 odm/lib64/sensors.hal.tof.so
 odm/lib64/vendor.oplus.hardware.cameraextension-V1-service-impl.so
 odm/lib64/vendor.oplus.hardware.cammidasservice-V1-ndk_platform.so
-odm/lib64/vendor.oplus.hardware.orms@1.0.so
 vendor/lib/libcamxexternalformatutils.so
 vendor/lib/libextcamera_client.so
 vendor/lib/vendor.oplus.hardware.extcamera@1.0.so
@@ -739,8 +738,6 @@ vendor/lib64/com.qti.feature2.stub.so
 vendor/lib64/com.qti.feature2.swmf.so
 vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/com.qti.chi.override.so
-vendor/lib64/libC2D2.so
-vendor/lib64/libCB.so
 vendor/lib64/libFace3DTA.so
 vendor/lib64/libFace3D_hlos.so
 vendor/lib64/libQ6MSFR_manager_stub.so
@@ -1659,7 +1656,6 @@ vendor/lib64/qtibus.so
 vendor/lib64/qtimutex.so
 vendor/lib64/vendor.oplus.hardware.radio-V2-ndk_platform.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.lpa@1.1.so
@@ -1799,7 +1795,7 @@ vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 # Snapdragon Computer Vision Engine
 vendor/lib/libfastcvdsp_stub.so
--vendor/lib/libfastcvopt.so
+vendor/lib/libfastcvopt.so
 vendor/lib/libscveCommon.so
 vendor/lib/libscveCommon_stub.so
 vendor/lib/libscveObjectSegmentation.so
@@ -1807,7 +1803,7 @@ vendor/lib/libscveObjectSegmentation_stub.so
 vendor/lib/libscveObjectTracker.so
 vendor/lib/libscveObjectTracker_stub.so
 vendor/lib64/libfastcvdsp_stub.so
--vendor/lib64/libfastcvopt.so
+vendor/lib64/libfastcvopt.so
 vendor/lib64/libscveCommon.so
 vendor/lib64/libscveCommon_stub.so
 vendor/lib64/libscveObjectSegmentation.so
@@ -1825,8 +1821,8 @@ vendor/lib64/vendor.qti.hardware.soter@1.0.so
 vendor/bin/thermal-engine
 vendor/etc/init/init_thermal-engine.rc
 vendor/etc/thermal-engine.conf
--vendor/lib/libthermalclient.so
--vendor/lib64/libthermalclient.so
+vendor/lib/libthermalclient.so
+vendor/lib64/libthermalclient.so
 
 # Time services
 vendor/app/TimeService/TimeService.apk
