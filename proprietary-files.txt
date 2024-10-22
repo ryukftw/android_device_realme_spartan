@@ -683,6 +683,7 @@ odm/lib64/libcvface_api.so
 odm/lib64/libdav1d.so.4
 odm/lib64/libdmtp.so
 odm/lib64/libeffect_custom.so
+odm/lib64/libexif-jpeg-aps.so
 odm/lib64/libfastov_dsp.so
 odm/lib64/libhci_face_camera_api.so
 odm/lib64/libhwconfigurationutil.so
