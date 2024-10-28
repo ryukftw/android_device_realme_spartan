@@ -353,6 +353,9 @@ PRODUCT_PACKAGES += \
     PixelSetupWizardStringsOverlay \
     WifiResTarget
 
+# Oplus Camera
+$(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
