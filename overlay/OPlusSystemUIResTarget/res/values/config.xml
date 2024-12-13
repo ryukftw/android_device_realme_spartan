@@ -11,4 +11,7 @@
     <!-- Charging info current divider, if needed -->
     <integer name="config_currentInfoDivider" translatable="false">1</integer>
 
+    <!-- Whether to disable Smart Pixels on UDFPS -->
+    <bool name="config_disableSmartPixelsOnUDFPS">true</bool>
+
 </resources>
