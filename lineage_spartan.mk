@@ -14,6 +14,17 @@ $(call inherit-product, device/realme/spartan/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# RisingOS flags
+RISING_MAINTAINER="RYUK"
+TARGET_ENABLE_BLUR := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+TARGET_ENABLE_PIXEL_FEATURES := true
+WITH_GMS := true
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Snapdragon 870 5G" \
+    RisingMaintainer="RYUK"
+
 PRODUCT_NAME := lineage_spartan
 PRODUCT_DEVICE := spartan
 PRODUCT_MANUFACTURER := realme
