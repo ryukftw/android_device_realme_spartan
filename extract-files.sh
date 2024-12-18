@@ -69,6 +69,7 @@ function blob_fixup() {
             grep -q libshims_fingerprint.oplus.so "${2}" || "${PATCHELF}" --add-needed libshims_fingerprint.oplus.so "${2}"
             ;;
         odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc)
+            [ "$2" = "" ] && return 0
             sed -i "8i\    task_profiles ProcessCapacityHigh MaxPerformance" "${2}"
             ;;
         odm/etc/dolby/multimedia_dolby_dax_default.xml)
@@ -113,6 +114,9 @@ function blob_fixup() {
         odm/lib/libdlbdsservice_v3_6.so | odm/lib/libstagefright_soft_ddpdec.so | odm/lib/libstagefrightdolby.so | odm/lib64/libdlbdsservice_v3_6.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+            ;;
+        *)
+            return 1
             ;;
     esac
 
