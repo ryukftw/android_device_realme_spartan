@@ -488,9 +488,9 @@ odm/etc/camera/pf/PerfectColorSet/portrait/param9.ini
 odm/etc/camera/pf/PerfectColorSet/portrait/photoSet.ini
 odm/etc/camera/pf/PerfectColorSet/portrait/platformSet.ini
 odm/etc/camera/pf/PerfectColorSet/portrait/sceneList.txt
-odm/etc/camera/pfb_bin/BeardSharp.bin
-odm/etc/camera/pfb_bin/BeardSharp.frag
-odm/etc/camera/pfb_bin/BeardSharp.vert
+odm/etc/camera/pfb_bin/BeardSharp.bin;MODULE_SUFFIX=_bin
+odm/etc/camera/pfb_bin/BeardSharp.frag;MODULE_SUFFIX=_frag
+odm/etc/camera/pfb_bin/BeardSharp.vert;MODULE_SUFFIX=_vert
 odm/etc/camera/pfb_bin/PreAddSRBinary.bin
 odm/etc/camera/pfb_bin/PreCalVarBinary.bin
 odm/etc/camera/pfb_bin/PreCalcSRBinary.bin
@@ -509,18 +509,18 @@ odm/etc/camera/pfb_bin/PreSkintuneMRTBinary.bin
 odm/etc/camera/pfb_bin/PreSurfaceBlurBinary.bin
 odm/etc/camera/pfb_bin/PreVertFilterBinary.bin
 odm/etc/camera/pfb_bin/PreVertSurBinary.bin
-odm/etc/camera/pfb_bin/SkinCalcHue.bin
-odm/etc/camera/pfb_bin/SkinCalcHue.frag
-odm/etc/camera/pfb_bin/SkinCalcHue.vert
-odm/etc/camera/pfb_bin/SkinColorBlur.bin
-odm/etc/camera/pfb_bin/SkinColorBlur.frag
-odm/etc/camera/pfb_bin/SkinColorBlur.vert
-odm/etc/camera/pfb_bin/SkinColorUnify.bin
-odm/etc/camera/pfb_bin/SkinColorUnify.frag
-odm/etc/camera/pfb_bin/SkinColorUnify.vert
-odm/etc/camera/pfb_bin/SkinHueUnify.bin
-odm/etc/camera/pfb_bin/SkinHueUnify.frag
-odm/etc/camera/pfb_bin/SkinHueUnify.vert
+odm/etc/camera/pfb_bin/SkinCalcHue.bin;MODULE_SUFFIX=_bin
+odm/etc/camera/pfb_bin/SkinCalcHue.frag;MODULE_SUFFIX=_frag
+odm/etc/camera/pfb_bin/SkinCalcHue.vert;MODULE_SUFFIX=_vert
+odm/etc/camera/pfb_bin/SkinColorBlur.bin;MODULE_SUFFIX=_bin
+odm/etc/camera/pfb_bin/SkinColorBlur.frag;MODULE_SUFFIX=_frag
+odm/etc/camera/pfb_bin/SkinColorBlur.vert;MODULE_SUFFIX=_vert
+odm/etc/camera/pfb_bin/SkinColorUnify.bin;MODULE_SUFFIX=_bin
+odm/etc/camera/pfb_bin/SkinColorUnify.frag;MODULE_SUFFIX=_frag
+odm/etc/camera/pfb_bin/SkinColorUnify.vert;MODULE_SUFFIX=_vert
+odm/etc/camera/pfb_bin/SkinHueUnify.bin;MODULE_SUFFIX=_bin
+odm/etc/camera/pfb_bin/SkinHueUnify.frag;MODULE_SUFFIX=_frag
+odm/etc/camera/pfb_bin/SkinHueUnify.vert;MODULE_SUFFIX=_vert
 odm/etc/camera/pfb_bin/ThirdPartyPreHoriFilterBinary.bin
 odm/etc/camera/pfb_bin/ThirdPartyPreMorphBinary.bin
 odm/etc/camera/pfb_bin/ThirdPartyPreOnlywhitenBinary.bin
@@ -578,7 +578,6 @@ odm/lib64/libAncHumanSegFigureFusion.so
 odm/lib64/libAncSegBaseSdk.so
 odm/lib64/libAncSegmentSdk.so
 odm/lib64/libBokehPre.so
-odm/lib64/libCOppLceTonemapAPI.so
 odm/lib64/libCaptureBokeh.so
 odm/lib64/libDeVIS.so
 odm/lib64/libEIS.so
@@ -610,7 +609,6 @@ odm/lib64/libSNPE_G.so
 odm/lib64/libSonyIMX471RmscLibrary.so
 odm/lib64/libStarMode.so
 odm/lib64/libSuperRaw.so
-odm/lib64/libSuperTextWrapper.so
 odm/lib64/libTrafficMode.so
 odm/lib64/libVDBayerHDR.so
 odm/lib64/libVDBlurless.so
@@ -622,8 +620,6 @@ odm/lib64/libVDUpScale.so
 odm/lib64/libVideoEnhance.so
 odm/lib64/libWaterMark.so
 odm/lib64/libWaterMode.so
-odm/lib64/libXDocProcessSDK.so
-odm/lib64/libYTCommon.so
 odm/lib64/lib_rectify.so
 odm/lib64/libaiboost.so
 odm/lib64/libaiboost_hexagon.so
@@ -639,7 +635,6 @@ odm/lib64/libancbase_rt_fusion.so
 odm/lib64/libancbase_rt_retain.so
 odm/lib64/libancbase_segbase.so
 odm/lib64/libancbase_segment.so
-odm/lib64/libaps_frame_registration.so
 odm/lib64/libapsdarksight.so
 odm/lib64/libapsexif.so
 odm/lib64/libapsjpeg.so
@@ -716,7 +711,7 @@ odm/lib64/libvl53l1_daemon.so
 odm/lib64/libwatermark_photo.so
 odm/lib64/sensors.hal.tof.so
 odm/lib64/vendor.oplus.hardware.cameraextension-V1-service-impl.so
-odm/lib64/vendor.oplus.hardware.cammidasservice-V1-ndk_platform.so
+odm/lib64/vendor.oplus.hardware.cammidasservice-V1-ndk_platform.so;MODULE_SUFFIX=_odm
 odm/lib64/vendor.oplus.hardware.orms@1.0.so
 vendor/lib/libcamxexternalformatutils.so
 vendor/lib/libextcamera_client.so
@@ -1055,7 +1050,7 @@ odm/etc/vintf/manifest/manifest_dax_dolby_v3_6.xml
 odm/lib/libdapparamstorage_v3_6.so
 odm/lib/libdeccfg_v3_6.so
 odm/lib/libdlbdsservice_v3_6.so
-odm/lib/libqtigef.so
+odm/lib/libqtigef.so;MODULE_SUFFIX=_odm
 odm/lib/libstagefright_soft_ddpdec_v3_6.so:odm/lib/libstagefright_soft_ddpdec.so
 odm/lib/libstagefrightdolby.so
 odm/lib/soundfx/libhwdap_v3_6.so
@@ -1065,7 +1060,7 @@ odm/lib/vendor.dolby_v3_6.hardware.dms360@2.0.so
 odm/lib64/libdapparamstorage_v3_6.so
 odm/lib64/libdeccfg_v3_6.so
 odm/lib64/libdlbdsservice_v3_6.so
-odm/lib64/libqtigef.so
+odm/lib64/libqtigef.so;MODULE_SUFFIX=_odm
 odm/lib64/soundfx/libhwdap_v3_6.so
 odm/lib64/soundfx/libswdap_v3_6.so
 odm/lib64/vendor.dolby_v3_6.hardware.dms360@2.0-impl.so
@@ -1094,7 +1089,7 @@ system_ext/lib64/vendor.qti.hardware.dpmservice@1.0.so
 system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/bin/dpmQmiMgr
 vendor/etc/init/dpmQmiMgr.rc
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libdpmqmihal.so
 
 # DRM
@@ -1370,7 +1365,7 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so
 vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
-vendor/lib64/vendor.qti.imsrtpservice@3.0.so
+vendor/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE_SUFFIX=_vendor
 
 # IPA firmware
 vendor/etc/init/ipa_fws.rc
@@ -1388,8 +1383,8 @@ vendor/firmware/ipa_uc.elf
 vendor/firmware/ipa_uc.mdt
 
 # Iris
-odm/lib64/libpwirisfeature.so
-odm/lib64/libpwirishalwrapper.so
+odm/lib64/libpwirisfeature.so;MODULE_SUFFIX=_odm
+odm/lib64/libpwirishalwrapper.so;MODULE_SUFFIX=_odm
 odm/lib64/vendor.pixelworks.hardware.display@1.0.so
 odm/lib64/vendor.pixelworks.hardware.display@1.1.so
 odm/lib64/vendor.pixelworks.hardware.feature@1.0.so
@@ -1430,7 +1425,7 @@ vendor/etc/media_profiles.xml
 vendor/etc/media_profiles_kona.xml
 vendor/etc/media_profiles_vendor.xml
 vendor/etc/system_properties.xml
-vendor/lib64/libmmosal.so
+vendor/lib64/libmmosal.so;MODULE_SUFFIX=_vendor
 
 # Native public libraries
 vendor/etc/public.libraries.txt
@@ -1481,7 +1476,7 @@ vendor/lib64/libOmxWmaDec.so
 # Osense
 odm/lib64/libosenseaidlhalclient.so
 odm/lib64/libosensehalclient.so
-odm/lib64/vendor.oplus.hardware.osense.client-V1-ndk_platform.so
+odm/lib64/vendor.oplus.hardware.osense.client-V1-ndk_platform.so;MODULE_SUFFIX=_odm
 odm/lib64/vendor.oplus.hardware.osense.client@1.0.so
 vendor/lib64/vendor.oplus.hardware.osense.client-V1-ndk_platform.so
 
@@ -2010,7 +2005,7 @@ vendor/etc/seccomp_policy/wifidisplayhalservice.policy
 vendor/etc/wfdconfig.xml
 vendor/lib/libFileMux_proprietary.so
 vendor/lib/libmm-hdcpmgr.so
-vendor/lib/libmmosal.so
+vendor/lib/libmmosal.so;MODULE_SUFFIX=_vendor
 vendor/lib/libmmrtpdecoder_proprietary.so
 vendor/lib/libmmrtpencoder_proprietary.so
 vendor/lib/libwfdcodecv4l2_proprietary.so
@@ -2033,5 +2028,5 @@ vendor/lib/libwfduibcsinkinterface_proprietary.so
 vendor/lib/libwfduibcsrc_proprietary.so
 vendor/lib/libwfduibcsrcinterface_proprietary.so
 vendor/lib/libwfdutils_proprietary.so
-vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
+vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
